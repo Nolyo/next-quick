@@ -2,6 +2,7 @@ import React from "react";
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { SessionProvider } from "next-auth/react";
 
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -21,15 +22,17 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={cn(inter.className, "flex flex-col min-h-screen")}>
-                <ThemeProvider
-                    attribute="class"
-                    defaultTheme="system"
-                    enableSystem
-                    disableTransitionOnChange
-                >
-                    {children}
-                </ThemeProvider>
+            <body className={cn(inter.className, "flex flex-col min-h-screen gap-3")}>
+                <SessionProvider>
+                    <ThemeProvider
+                        attribute="class"
+                        defaultTheme="system"
+                        enableSystem
+                        disableTransitionOnChange
+                    >
+                        {children}
+                    </ThemeProvider>
+                </SessionProvider>
             </body>
         </html>
     );
