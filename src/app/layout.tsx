@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Next Quick",
-    description: "Next with Prisma, Shadcn, TailwindCSS, TypeScript, AuthJs"
+    description: "Next with Prisma, Shadcn, TailwindCSS, TypeScript, AuthJs, Zustand"
 };
 
 export default function RootLayout({
