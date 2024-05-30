@@ -1,5 +1,11 @@
 #Next Quick
 
+## Setup
+
+`npx create-next-quick-app`
+
+add your google client id and google client secret to the .env.local file
+
 ```bash
 npm run dev
 # or
